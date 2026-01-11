@@ -11,7 +11,7 @@ public class Day13 {
     public static void main(String[] args) {
         int num = -1;
         int sum = 0;
-    
+
         if (num < 0) {
             System.out.println("Num cannot be Negative");
             return;

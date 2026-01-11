@@ -1,8 +1,3 @@
-package com.techwithedward.The_100_days_of_Java_Challenge;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
 
 /**
  * Problem Description: An Armstrong number of n digits is a number that is
@@ -52,9 +47,12 @@ import java.util.Scanner;
  *
  *
  * */
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Day12 {
     public static void main(String[] args) {
+
         int num = 371;
 
         if (num < 1) {
@@ -85,7 +83,7 @@ public class Day12 {
         int sum = 0;
 
         while (num > 0) {
-            int digit = num % 10;           // get last digit
+            int digit = num % 10; // get the last digit
             sum = sum + Math.powExact(digit, digits(original));
             num = num / 10;
         }
@@ -103,4 +101,3 @@ public class Day12 {
         System.out.println(Arrays.toString(armstrongValues.toArray()));
     }
 }
-
