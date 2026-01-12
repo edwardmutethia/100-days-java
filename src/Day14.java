@@ -13,7 +13,7 @@ public class Day14 {
         int count = 0;
 
         if (num < 0) {
-            System.out.println("Error: Works for positive numbers only");
+            System.out.println("Works for positive numbers only");
             return;
         }
 
