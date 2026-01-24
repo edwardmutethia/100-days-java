@@ -10,14 +10,13 @@
 public class Day15 {
     
     static int gcp(int a, int b) {
-// Store minimum(a,b)
-//        int i;
-//
-//        if (a < b)
-//            i = a;
-//        else
-//            i = b;
-        int i = Math.min(a,b);
+    // Store minimum(a,b)
+       int i;
+
+       if (a < b)
+           i = a;
+       else
+           i = b;
 
         for (i = i; i > 1; i--) {
             if (a % i == 0 && b % i == 0)
