@@ -8,17 +8,34 @@
  */
 
 public class Day15 {
-    
-    static int gcp(int a, int b) {
-    // Store minimum(a,b)
-       int i;
+    public static void main(String[] args) {
+        int a = 56, b = 98;
 
-       if (a < b)
-           i = a;
-       else
-           i = b;
+        System.out.println(findGCD(a, b));
+    }
 
-        for (i = i; i > 1; i--) {
+    /*
+     * brute force approach to find GCD
+     *      Check all numbers from 1 up to the smallest number
+     *      and find the largest number that divides both
+     *
+     * START
+     *      INPUT a, b
+     *      gcd <- 1
+     *
+     *      FOR i from 1 to minimum(a,b) DO
+     *          IF a MOD i = 0 AND b MOD i = 0 THEN
+     *             gcd = i
+     *          END IF
+     *      END FOR
+     *
+     *      OUTPUT gcd
+     * END
+     */
+    static int findGCD(int a, int b) {
+        int min = Math.min(a, b);
+
+        for (int i = min; i > 1; i--) {
             if (a % i == 0 && b % i == 0)
                 return i;
         }
@@ -26,10 +43,21 @@ public class Day15 {
         return 1;
     }
 
-
-    public static void main(String[] args) {
-        int a = 56, b = 98;
-
-        System.out.println(gcp(a, b));
-    }
+    /*
+     * Using Euclidean Algorithm - The GCD of two numbers does not change
+     * if the larger number is replaced by the remainder when it is divided
+     * by the smaller number.
+     *
+     * START
+     *      INPUT a, b
+     *
+     *      WHILE b is not equal to 0 DO
+     *          remainder <- a MOD b
+     *          a <- b
+     *          b <- remainder
+     *      END WHILE
+     *
+     *      OUTPUT a as GCD
+     *  END
+     */
 }
